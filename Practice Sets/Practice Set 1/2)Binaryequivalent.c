@@ -4,27 +4,28 @@ int main()
 {
     int decimalint, Binaryeq[50];
     printf("Enter the decimal integer to convert: ");
-    scanf("%d",decimalint);
-    int n=sizeof(decimalint)/sizeof(int);
+    scanf("%d", &decimalint);
+    int n=0;
 
+    if(decimalint==0)
+    {
+        Binaryeq[0]=0;
+        n=1;
+    }
+
+    else
+    {
         while(decimalint>0)
         {
-            for(int i=0;i<n;i++)
-            {
-                Binaryeq[i]=decimalint%2;
-                decimalint/=10;
-            }
+           Binaryeq[n]=decimalint%2;
+           decimalint/=2;
+           n++;
         }
-    
-    
-
-        
-        
-    
-
+    }
+    printf("Binary equivalent: ");
     for(int j=n-1;j>=0;j--)
     {
-        printf("%d",Binaryeq[j]);
+        printf(" %d", Binaryeq[j]);
     }
     printf("\n");
     return 0;
