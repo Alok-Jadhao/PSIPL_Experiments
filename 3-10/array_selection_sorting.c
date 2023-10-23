@@ -1,15 +1,5 @@
 #include <stdio.h>
 
-float max_marks(float marks[], int n)
-{
-    float max=marks[0];
-    for(int i=0;i<n;i++)
-        if(marks[i]>max)
-            max=marks[i];
-    
-    return max;
-}
-
 void read_array(float marks[], int n)
 {
     for(int i=0;i<n;i++)
@@ -30,9 +20,9 @@ void selection_sort(float marks[], int n)
         //finding the min of the unsorted array.
         for(int j=i+1;j<n;j++)
         {
-            if(marks[j]<marks[min_indx]){
+            if(marks[j]<marks[min_indx])
                 min_indx=j;
-            }
+        
         }
 
         //swapping
