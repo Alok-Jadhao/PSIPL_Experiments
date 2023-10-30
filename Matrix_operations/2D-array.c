@@ -73,7 +73,6 @@ void mat_mult(int r1, int c1, int mat1[r1][c1], int r2, int c2, int mat2[r2][c2]
     }
 }
 
-
 void Transpose(int r,int c,int m[r][c],int t[r][c])
 {
     for(int i=0;i<r;i++)
@@ -85,23 +84,15 @@ void Transpose(int r,int c,int m[r][c],int t[r][c])
 
 int main()
 {
-    int r1, r2, c1, c2;
-    printf("Enter row and column of mat1: ");
+    int r1, c1;
+    printf("Enter row and column of matrix: ");
     scanf("%d %d", &r1, &c1);
     int mat1[r1][c1];
     read_mat(r1, c1, mat1);
     int t[r1][c1];
     Transpose(r1,c1,mat1,t);
     printf("Matrix transpose result:\n");
-    for (int i = 0; i < r1; i++) 
-    {
-        for (int j = 0; j < c1; j++)
-            printf("%d ", t[i][j]);
-        printf("\n");
-    }
-
-
-    
-    
+    print_mat(r1,c1,t);
+ 
     return 0;
 }
