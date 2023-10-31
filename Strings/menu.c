@@ -42,7 +42,7 @@ int main()
                 printf("The copied string is: ");
                 for(int i=0;i<count;i++)
                 {   
-                    string2[i];
+                    printf("%c",string2[i]);
                 }
             
                 break;
@@ -99,12 +99,15 @@ int main()
             //switch case 4:
             {
                 char string3[50];
-                for(int i=count-1;i>0;i--)
+                for(int i=count;i>0;i--)
                 {   
-                    string3[i] = str[count-i-1];
+                    string3[i] = str[count-i];
                 }
 
-                printf("The reversed string  is: %s", string3);
+                printf("The reversed string  is: ");
+                for(int i=0;i<=count;i++){
+                    printf("%c",string3[i]);
+                }
                 break;
             }
 
@@ -149,6 +152,8 @@ int main()
         default:
             printf("Invalid choice.\n");
     }
+
+     
     
 
     return 0;
