@@ -12,6 +12,7 @@ struct Game {
 };
 
 void read_teams(struct Team t[], int n) {
+    printf("Team #games #wins #losses #draws #goals : \n");
     for (int i = 0; i < n; i++) {
         scanf("%s", t[i].name);
         scanf("%d", &t[i].games);
@@ -26,7 +27,7 @@ void read_teams(struct Team t[], int n) {
 
 void read_games(struct Game g[], int m) {
     for (int i = 0; i < m; i++) {
-        printf("Team #games #wins #losses #draws #goals : \n");
+        
         scanf("%s", g[i].team1);
         scanf("%d", &g[i].goals1);
         scanf("%s", g[i].team2);

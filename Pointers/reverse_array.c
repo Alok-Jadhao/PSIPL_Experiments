@@ -37,7 +37,6 @@ int main()
     printf("The reversed array is: ");
     print_array(a,n);
 
-    large_small(a,n);
 
 
 

@@ -28,22 +28,28 @@ void print_student(struct student s) {
     printf("Marks: %.2f\n", s.marks);
 }
 
-struct student find_max_marks(int n,struct student s[])
-{
-    int max=s[0].marks;
-    for(int i=1;i<n;i++)
-    {
-        if(max<s[i].marks)
-            max=s[i].marks;
+struct student find_max_marks(int n, struct student s[]) {
+    float max = s[0].marks;
+    int max_index = 0;
+
+    for (int i = 1; i < n; i++) {
+        if (max < s[i].marks) {
+            max = s[i].marks;
+            max_index = i;
+        }
     }
-    printf("%d",max);
+
+    return s[max_index];
 };
+
 
 void sort_name_wise(int n,struct student s[])
 {
     for(int i=0;i<n-1;i++)//no. of iterations
     {
-        int min_idx = 1;
+        int min_idx = i;
+
+
         for(int j=i+1;j<n;j++)
         {
             if(strcmp(s[j].name,s[min_idx].name)==-1)
@@ -69,16 +75,19 @@ int main() {
 
     for(int i=0;i<n;i++)
         print_student(s_arr[i]);
+    
+    printf("\n");
 
-    printf("The maximum marks are: ");
-    find_max_marks(n,s_arr);
+    struct student max_marks_student = find_max_marks(n, s_arr);
+    printf("The student with max marks is: ");
+    print_student(max_marks_student);
     printf("\n");
 
     sort_name_wise(n,s_arr);
-    printf("\nStudent sorted name wise: ");
+    printf("\nStudent sorted according to name alphabetically: ");
     for(int i = 0;i<n;i++)
     {
-        print_student(s_arr[]);
+        print_student(s_arr[i]);
     }
     
     return 0;
