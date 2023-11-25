@@ -43,6 +43,7 @@ int main(){
         int a= strcmp(B[i].genre,"Fiction");
         if(a==0){
             if(B[i].price>5000)
+                printf("The author names is/are: ");
                 printf("%s\n",B[i].Author[i].name);
         }
     }
